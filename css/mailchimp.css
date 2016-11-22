@@ -1,0 +1,63 @@
+
+
+.mc-response {
+	margin: 25px 0;
+	-webkit-animation: fadeIn .6s ease both;
+	animation: fadeIn .6s ease both;
+}
+
+
+
+.mc-success {
+	color: green;
+}
+
+.mc-error form {
+	color: red;
+	-webkit-animation: formError .4s ease both;
+	animation: formError .4s ease both;
+}
+
+@-webkit-keyframes formError {
+	0% {
+		left: -3em;
+	}
+
+	25% {
+		left: 3em;
+	}
+
+	50% {
+		left: -3em;
+	}
+
+	75% {
+		left: 3em;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+@keyframes formError {
+	0% {
+		left: -3em;
+	}
+
+	25% {
+		left: 3em;
+	}
+
+	50% {
+		left: -3em;
+	}
+
+	75% {
+		left: 3em;
+	}
+
+	100% {
+		left: 0;
+	}
+}

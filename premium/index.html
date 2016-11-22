@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link rel="stylesheet" href="../css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="../css/style.css"> <!-- Resource style -->
+	<script src="../css/faq-files/js/modernizr.js"></script> <!-- Modernizr -->
+	<title>Premium</title>
+    
+     <!-- Favicon -->
+
+        <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+
+        
+        
+       
+   		<link rel="stylesheet" href="../css/font-awesome.min.css">
+ 		<link rel="stylesheet" href="../css/animate.css">
+
+  
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/main-faq.css">
+
+  <script src="../js/modernizr-2.7.1.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+    <!-- crisp -->
+  <script src="https://client.crisp.im/l/15169705-6e85-4e20-9a90-e0241e7a060d.js" defer></script>
+    
+</head>
+<body>
+
+<!-- <div class="navbar navbar-inverse navbar-fixed-top premium header-pricing" style="top:0;">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="logo" href="../index.html"><img src="../img/logo-menu-bleu.png" alt="Logo"></a>
+          <a class="logo-pricing" href="../index.html"><img src="../img/logo-menu.png" alt="Logo"></a>
+        </div>
+        <div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="http://help.sababot.com">Help</a></li>
+            <li><a href="../support/">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+<header class="premium header-pricing new-premium">
+<div class="bg-header-premium">
+      <div class="container">
+      
+        
+        <img src="../img/logo-betbot.svg" class="wow fadeIn" alt="Logo" style="width:100%; max-width:365px; margin-bottom:20px;">
+            <h1>Switch to premium</h1>
+  </div>
+  </div>  
+</header> -->
+
+
+
+<!--Pricing-->
+    <section id="pricing-premium" class="pad-lg bg-header-premium">
+    
+      <div class="container text-center">
+          <img src="../img/logo-betbot.svg" class="wow fadeIn" alt="Logo" style="width:100%; max-width:365px; margin-bottom:20px;">
+          <h1>Switch to premium</h1>
+   	  </div>
+    
+      <div class="container" style="padding-top:20px;">       
+        <div class="row">
+          
+<!--           <div class="col-sm-4 pricing-container2 wow fadeInUp" data-wow-delay="1s">
+            <br />
+            <ul class="list-unstyled pricing-table2 text-center faded">
+    					<li class="headline"><h5 class="current-free">Current free option</h5></li>
+    					<li class="features first"><strong>1</strong> simultaneous competition</li>
+    					<li class="features">Up to <strong>6</strong> active players</li>
+    					<li class="features">Limited leaderboard</li>
+                        <li class="features last btn btn-wide"><a href="#"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x"  /></a></li>
+    				</ul>
+          </div> -->
+          
+          <div class="text-center wow fadeInUp middle" data-wow-delay="0.3s">
+          <br />
+            <ul class="list-unstyled text-center">
+    					<li class="headline extra-paddingtop premium-headline"><h5>Monthly subscription</h5></li>
+                        <li class="price midprice"><div class="amount"><span style="margin: 0 6px; position:relative; bottom:8px; font-size:16px;">$</span>9<small>.99/mo</small></div></li>
+                        <li class="instead">Instead of <s>$29.99</s></li>
+    					<li class="features first"><img src="../img/checked.png" style="max-width:20px; margin:0 5px">&#8734; simultaneous competitions</li>
+    					<li class="features"><img src="../img/checked.png" style="max-width:20px; margin:0 5px">Up to <strong>14</strong> active players</li>
+    					<li class="features"><img src="../img/checked.png" style="max-width:20px; margin:0 5px">Fully-integrated leaderboard</li>
+    					<li class="features last btn btn-wide tttest">
+                        	<!-- <form action="https://sababot.com" method="POST"> -->
+                              <script src="https://checkout.stripe.com/checkout.js"></script>
+
+                              <button id="customButton">Pay now</button>
+
+                              <script>
+                                var teamid = getParameterByName('teamId');
+                                var amount = "999";
+                                var currency = "usd";
+                                var planName = "PREMIUM";
+                                
+                                var chargeHandler = StripeCheckout.configure({
+                                  key: 'pk_test_3ErxHnyekZFFsu6nEm1FslHI',
+                                  image: '/img/favicon-96x96.png',
+                                  locale: 'auto',
+                                  token: function(token) {
+                                    tokenid = token.id
+                                    $.post({
+                                        url : 'https://sabaserver.herokuapp.com/charge',
+                                        data: JSON.stringify({ 
+                                          'teamid': teamid, 
+                                          'currency' : currency, 
+                                          'token' : tokenid, 
+                                          'amount' : amount, 
+                                          'planName': planName, 
+                                          'projectName' : 'sababot', 
+                                          'isInTest' : true  
+                                        })
+                                    });
+                                  }
+                                });
+
+                                $('#customButton').on('click', function(e) {
+                                  // Open Checkout with further options:
+                                  chargeHandler.open({
+                                    name: 'Sababot Premium',
+                                    zipCode: true,
+                                    currency: "usd",
+                                    amount: 999
+                                  });
+                                  e.preventDefault();
+                                });
+
+                                // Close Checkout on page navigation:
+                                $(window).on('popstate', function() {
+                                  chargeHandler.close();
+                                });
+
+
+                                function getParameterByName(name, url) {
+                                  if (!url) url = window.location.href;
+                                  name = name.replace(/[\[\]]/g, "\\$&");
+                                  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                                      results = regex.exec(url);
+                                  if (!results) return null;
+                                  if (!results[2]) return '';
+                                  return decodeURIComponent(results[2].replace(/\+/g, " "));
+                                }
+                                
+
+
+                                </script>
+
+                                <script>
+                                // var plan = "NewPremiumSub";
+                                // var currency = "usd";
+                                // var planName = "New Premium Sababot";
+                                // var teamid = getParameterByName('teamId');
+                                // var amount = 999;
+
+                                // var chargeHandler = StripeCheckout.configure({
+                                //   key: 'pk_test_3ErxHnyekZFFsu6nEm1FslHI', 
+
+                                //   image: '/img/favicon-96x96.png',
+                                //   locale: 'auto',
+                                //   token: function(token) {
+                                //     tokenid = token.id
+                                //     $.post({
+                                //        url : 'https://sabaserver.herokuapp.com/charge',
+                                //        data: JSON.stringify({ 
+                                //         'teamid': teamid,
+                                //         'plan': plan, 
+                                //         'currency' : currency, 
+                                //         'token' : tokenid, 
+                                //         'amount' : amount, 
+                                //         'planName': planName, 
+                                //         'projectName' : 'sababot', 
+                                //         'isInTest' : true  })
+                                //     });
+                                //   }
+                                // });
+
+                                // $('#customButton').on('click', function(e) {
+                                //   // Open Checkout with further options:
+                                //   chargeHandler.open({
+                                //     name: 'Go Premium',
+                                //     description: 'Monthly subscribtion ($9.99/mo)',
+                                //     zipCode: true,
+                                //     currency: "usd",
+                                //     amount: 999
+                                //   });
+                                //   e.preventDefault();
+                                // });
+
+                                // // Close Checkout on page navigation:
+                                // $(window).on('popstate', function() {
+                                //   chargeHandler.close();
+                                // });
+
+
+                                // function getParameterByName(name, url) {
+                                //   if (!url) url = window.location.href;
+                                //   name = name.replace(/[\[\]]/g, "\\$&");
+                                //   var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                                //       results = regex.exec(url);
+                                //   if (!results) return null;
+                                //   if (!results[2]) return '';
+                                //   return decodeURIComponent(results[2].replace(/\+/g, " "));
+                                // }
+                              </script>
+
+                              
+                            
+                           <!-- </form> -->     
+                            
+                        </li>
+    				</ul>
+          </div>
+          
+          <!-- <div class="col-sm-4 pricing-container2 wow fadeInUp" data-wow-delay="0.4s">
+          <br />
+            <ul class="list-unstyled pricing-table2 text-center badge1" data-badge="-56%">
+    					<li class="headline extra-paddingtop premium-headline"><h5>Launch Offer: 1-year access</h5></li>
+                        <li class="price midprice"><div class="amount"><span style="margin: 0 6px; position:relative; bottom:8px; font-size:16px;">$</span>199<small>.99</small></div></li>
+                        <li class="instead">instead of $359,99</li>
+    					<li class="features first"><img src="../img/checked.png" style="max-width:20px; margin:0 5px">&#8734; simultaneous competitions</li>
+    					<li class="features"><img src="../img/checked.png" style="max-width:20px; margin:0 5px">Up to <strong>19</strong> active players</li>
+    					<li class="features"><img src="../img/checked.png" style="max-width:20px; margin:0 5px">Fully-integrated leaderboard</li>
+    					<li class="features last btn btn-wide tttest">
+                        	<form action="#" method="POST">
+
+                           <script src="https://checkout.stripe.com/checkout.js"></script>
+
+                              <button id="customButton2">Start Premium (One-off Payment)</button>
+
+                              <script>
+                                var chargeHandler = StripeCheckout.configure({
+                                  key: 'pk_live_xHzsfy4NUhUWB0VXJbai8u23',
+                                  image: '/img/favicon-96x96.png',
+                                  locale: 'auto',
+                                  token: function(token) {
+                                    tokenid = token.id
+                                    $.ajax({
+                                        url : 'https://sabaserver.herokuapp.com/charge',
+                                        type : 'POST',
+                                        headers: { 'teamid': teamid, 'currency' : currency, 'token' : tokenid, 'amount' : amount, 'planName': planName }
+                                    });
+                                
+                                  }
+                                });
+
+                                $('#customButton2').on('click', function(e) {
+                                  // Open Checkout with further options:
+                                  chargeHandler.open({
+                                    name: 'Sababot Premium',
+                                    description: 'ONE-OFF 1-year discount',
+                                    zipCode: true,
+                                    currency: "usd",
+                                    amount: 19999
+                                  });
+                                  e.preventDefault();
+                                });
+
+                                // Close Checkout on page navigation:
+                                $(window).on('popstate', function() {
+                                  chargeHandler.close();
+                                });
+
+
+                                function getParameterByName(name, url) {
+                                  if (!url) url = window.location.href;
+                                  name = name.replace(/[\[\]]/g, "\\$&");
+                                  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                                      results = regex.exec(url);
+                                  if (!results) return null;
+                                  if (!results[2]) return '';
+                                  return decodeURIComponent(results[2].replace(/\+/g, " "));
+                                }
+                                     
+                                var teamid = getParameterByName('teamId');
+                                var amount = "19999"
+                                var currency = "usd"
+                                var planName = "PREMIUM"
+
+                            </script>
+                        
+                        </form>
+                            
+                        </li>
+    				</ul>
+          </div> -->
+          
+        </div>
+        
+      </div>
+    </section>
+    
+    <section id="need-more" class="need-more">
+    	<div class="container">
+      
+          <div class="row text-center">
+            <p>Need more customizable options or more active players?<br>
+    Contact us at <a href="mailto:contact@iplus.io" class="link-grey">contact@iplus.io</a></p>
+    	  </div>
+        </div>
+    
+    </section>
+    
+    <section id="discover-more" class="discover-more">
+      <div class="container">
+      
+      <div class="row">
+            <h2>WHEN SWITCHING TO PREMIUM, YOU’LL ALSO BENEFIT FROM ALL THESE FEATURES</h2>
+      </div>
+
+          <div class="row functionnalities">
+          
+         	<div class="col-sm-6">
+            <div class="img-discover-more left-side"><img src="../img/mouse-icon.png"></div>
+            <div class="steps right-side">
+            	 <h3>Direct click to place your bet</h3>
+                 <p>Place or edit your bets seamlessly directly from slack !</p>
+            </div>
+            </div>
+        	<div class="col-sm-6">
+            	<div class="img-discover-more left-side"><img src="../img/trophy-emoji.jpg"></div>
+            <div class="steps right-side">
+            	<h3>Fully-detailed leaderboard</h3>
+                 <p>Check rankings and other metrics from one place, anytime !</p>
+                </div>
+            </div>
+          </div>
+          <div class="row functionnalities">
+          <div class="col-sm-6">
+          		 
+            	 <div class="img-discover-more-balls left-side"><img src="../img/sports-balls.png"></div>
+            <div class="steps right-side">
+            	 <h3>Quick access games’ lists and scores</h3>
+                 <p>NFL, Premier League, Liga, Seria A and more. Easily access games’s lists before placing your bets</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="img-discover-more left-side"><img src="../img/smiley.png"></div>
+            <div class="steps right-side">
+            	<h3>Incredible bot interac7on</h3>
+                <p>Sababot is here to make you happier. Just have fun !</p>
+            </div>
+          </div>
+          </div>
+          <div class="row functionnalities-last">
+            <div class="col-sm-6">
+            	 <div class="img-discover-more left-side"><img src="../img/alarm-clock.png"></div>
+            <div class="steps right-side">
+            	 <h3>Powerful notification system</h3>
+                <p>Be notified before games start and be alerted when matches are over. No spam guaranteed !</p>
+            	 </div>
+            </div>
+            <div class="col-sm-6">
+            <div class="img-discover-more left-side"><img src="../img/back-emoji.png"></div>
+            <div class="steps right-side">
+            	<h3>Get your Weekly Digest <img src="../img/coming-soon.png" style="max-width:100px;"></h3>
+                <p>Get awesome feedback on your bets and your team !</p>
+            </div>
+            </div>
+          </div>
+          
+         
+                 
+        
+      </div>
+    </section>
+    
+    
+     <div style="clear:both"></div>
+     
+     <section id="faq" class="faq">
+      <div class="container">
+      
+      <div class="row text-center">
+            <h2>FAQ</h2>
+      </div>
+
+          <div class="row functionnalities">
+          
+         	<div class="col-sm-6">
+            	 <h3>How to install Sababot ?</h3>
+                 <p>Click on <strong>Add to Slack</strong>. Then select a channel or create a new one, add your teammates and you’re all set. Don’t worry, no spam guaranteed.</p>
+            </div>
+        	<div class="col-sm-6">
+            	<h3>How does the free trial work ?</h3>
+                 <p>When you subscribe to premium plan, you’re automatically on a free trial period. You benefit from premium features for one full month.</p>
+                </div>
+          </div>
+          <div class="row functionnalities">
+          
+         	<div class="col-sm-6">
+            	 <h3>Do you offer support ?</h3>
+                 <p>When you subscribe to premium plan, you benefit from a full support from our team. Just contact us at <a href="mailto:contact@iplus.io">contact@iplus.io</a></p>
+            </div>
+        	<div class="col-sm-6">
+            	<h3>How to switch to Premium ?</h3>
+                 <p>If you’re on a basic free plan, just say <strong>subscribe</strong> on a private conversation with sababot. He will take care of everything.</p>
+                </div>
+          </div>
+          <div class="row functionnalities">
+          
+         	<div class="col-sm-6">
+            	 <h3>When can I unsubscribe ?</h3>
+                 <p>You’re charged every month, even when season is over. However, you can unsubscribe anytime.</p>
+            </div>
+          </div>
+          
+        
+      </div>
+    </section>
+    
+    
+     <div style="clear:both"></div>
+     
+     
+
+
+
+<footer>
+      <div class="container">
+        
+        <div class="row">
+        <div class="col-sm-8 text-center">
+        	<div class="col-sm-3 text-center">
+            	<a href="../privacy/">Privacy</a>
+            </div>
+            <div class="col-sm-3 text-center">
+            	<a href="../terms-and-conditions/">Terms</a>
+            </div>
+            <div class="col-sm-3 text-center">
+            	<a href="mailto:contact@iplus.io ">Contact</a>
+            </div>
+            <div class="col-sm-3 text-center">
+            	<a href="#">Made with <img src="../img/heart.png" width="15" height="15" alt="heart"></a>
+            </div>
+          </div>
+          
+        
+          <div class="col-sm-4 text-center">
+            <ul class="list-inline social">
+              <li>Follow us on:</li>
+              <li><a href="https://twitter.com/sababot_bet" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://www.facebook.com/sababot" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+          </div>
+          
+          
+        </div>
+        
+      </div>
+    </footer>
+<script src="../js/jquery-2.1.1.js"></script>
+<script src="../js/jquery.mobile.custom.min.js"></script>
+<script src="../js/main.js"></script> <!-- Resource jQuery -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-82658059-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<!-- Javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../js/wow.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+</body>
+</html>
